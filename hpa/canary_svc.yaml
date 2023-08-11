@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-canary
+  namespace: test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: svc-canary
+  template:
+    metadata:
+      labels:
+        app: svc-canary
+    spec:
+      containers:
+        - name: svc-canary
+          image: httpd
+          ports:
+           - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+            limits:
+              cpu: 15m
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-canary
+  namespace: test
+spec:
+  type: NodePort
+  selector:
+    app: svc-canary
+  ports:
+    - port: 80

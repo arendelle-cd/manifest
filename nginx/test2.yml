@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mynginx2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: mynginx2
+  template:
+    metadata:
+      labels:
+        run: mynginx2
+    spec:
+      containers:
+        - image: 211.183.3.100/test/nginx:1.0
+          name: mynginx2
+          ports:
+            - containerPort: 8891

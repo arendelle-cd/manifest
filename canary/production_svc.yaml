@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-production
+  namespace: canary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: svc-production
+  template:
+    metadata:
+      labels:
+        app: svc-production
+    spec:
+      containers:
+        - name: svc-production
+          image: nginx
+          ports:
+           - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-production
+  namespace: canary
+spec:
+  type: NodePort
+  selector:
+    app: svc-production
+  ports:
+    - port: 80
+      targetPort: 80

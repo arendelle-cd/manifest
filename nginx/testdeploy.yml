@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testnginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: testnginx
+  template:
+    metadata:
+      labels:
+        run: testnginx
+    spec:
+      containers:
+        - image: 211.183.3.100/test/nginx:1.0
+          name: testnginx
+          ports:
+            - containerPort: 8890
