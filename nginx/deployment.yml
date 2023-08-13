@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mynginx
+  namespace: habortest
 spec:
   replicas: 3
   selector:
@@ -13,7 +14,7 @@ spec:
         run: mynginx
     spec:
       containers:
-        - image: 211.183.3.100/test/nginx:1.0
+        - image: 211.183.3.100/test/nginx:22
           name: mynginx
           ports:
             - containerPort: 8888
