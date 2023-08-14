@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: svc-production
-          image: 211.183.3.100/web/production:1.0
+          image: 211.183.3.100/web/production:3.0
           ports:
            - containerPort: 80
           resources:
