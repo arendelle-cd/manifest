@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: svc-canary
-          image: 211.183.3.100/web/canary:1.0
+          image: 211.183.3.100/web/canary:2.0
           ports:
            - containerPort: 80
           resources:
