@@ -10,6 +10,11 @@
 - **Horizontal Pod Autoscaler (HPA)**: CPU/메모리 기준 자동 스케일링
 
 ## 🛠 기술 스택
-- Kubernetes, Docker
+- **Container / Orchestration**: Kubernetes, Docker  
+- **Auto Scaling**: HPA (Horizontal Pod Autoscaler)  
+- **Traffic Management**: NGINX Ingress Controller (Canary Routing)
 
+## 🎬 시연 영상
 
+[![시연 영상 썸네일](https://img.youtube.com/vi/_TVC69Qdzdg/0.jpg)](https://youtu.be/_TVC69Qdzdg?si=dJmyHUrNjE2ARqS7)  
+**영상 설명:** Canary 트래픽 분배 과정을 시각적으로 보여줍니다.
